@@ -1,12 +1,29 @@
 import React from "react"
 
-const Pizza = () => {
+const Pizza = (props) => {
+
+  console.log(props.pizzaDetails)
+  console.log(props.pizzaDetails.vegeterian)
+
+  //expected 
+  //=> {pizza object with correct boolena}
+  //=> true or false
+
+  //actual
+  // => {pizza object with correct boolean}
+  // => undefined
+
+
+  let handleClick = (e) => {
+    props.editPizza(props.pizzaDetails)
+  }
+  
   return(
     <tr>
-      <td>{"Replace Me With Pizza Topping"}</td>
-      <td>{"Replace Me With Pizza Size"}</td>
-      <td>{"Replace Me With Vegatarian"}</td>
-      <td><button type="button" className="btn btn-primary">Edit Pizza</button></td>
+      <td>{props.pizzaDetails.topping}</td>
+      <td>{props.pizzaDetails.size}</td>
+      <td>{props.pizzaDetails.vegeterian}</td>
+      <td><button type="button" className="btn btn-primary" onClick={e => handleClick(e)} >Edit Pizza</button></td>
     </tr>
   )
 }

@@ -1,16 +1,25 @@
 import React from "react"
 
-const PizzaForm = () => {
+
+const PizzaForm = (props) => {
+  console.log(props.editingPizza.vegeterian)
+
+  const {topping, size } = props.editingPizza
+  // console.log(props.editingPizza.vegeterian)
+
+  
+
+
+
   return(
       <div className="form-row">
         <div className="col-5">
             <input type="text" className="form-control" placeholder="Pizza Topping" value={
-                //Pizza Topping Should Go Here
-                null
+                topping
               }/>
         </div>
         <div className="col">
-          <select value={null} className="form-control">
+          <select value={size} className="form-control">
             <option value="Small">Small</option>
             <option value="Medium">Medium</option>
             <option value="Large">Large</option>
@@ -38,4 +47,4 @@ const PizzaForm = () => {
   )
 }
 
-export default PizzaForm
+export default PizzaForm;
